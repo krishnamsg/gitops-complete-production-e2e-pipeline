@@ -27,7 +27,7 @@ pipeline {
             steps {
                 sh """
                     git config --global user.name "krishnamsg"
-                    git congig --global user.email "krishnams.aws1@gmail.com"
+                    git config --global user.email "krishnams.aws1@gmail.com"
                     git add .
                     git commit -m "Updated deployment Manifest"
                 """
