@@ -17,17 +17,17 @@ pipeline {
         stage('Update the Deployemnt Tags') {
             steps {
                 sh """
-                    cat deployment.yaml
-                    sed -i 's/${APP_NAME}.*${IMAGE_TAG}/g' deployment.yaml
-                    cat deployment.yaml
+                    cat guestbook-ui-deployment.yaml
+                    sed -i 's/${APP_NAME}.*${IMAGE_TAG}/g' guestbook-ui-deployment.yaml
+                    cat guestbook-ui-deployment.yaml
                 """
             }
         }
         stage('Push the changed deployment to GIT') {
             steps {
                 sh """
-                    git config --globel user.name ""
-                    git congig --globel user.email ""
+                    git config --globel user.name "krishnamsg"
+                    git congig --globel user.email "krishnams.aws1@gmail.com"
                     git add deployment.yaml
                     git commit -m "Updated deployment Manifest"
                 """
