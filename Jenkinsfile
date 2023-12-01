@@ -14,15 +14,15 @@ pipeline {
                 git branch: 'main', credentialsId: 'github', url: 'https://github.com/krishnamsg/gitops-complete-production-e2e-pipeline'
             }
         }
-        //stage('Update the Deployemnt Tags') {
-        //    steps {
-        //        sh """
-          //          cat guestbook-ui-deployment.yaml
-            //        sed -i 's/${APP_NAME}.*${APP_NAME}:${IMAGE_TAG}/g' guestbook-ui-deployment.yaml
-              //      cat guestbook-ui-deployment.yaml
-                //"""
-            //}
-        //}
+        stage('Update the Deployemnt Tags') {
+            steps {
+                sh """
+                    cat guestbook-ui-deployment.yaml
+                    sed -i 's/${APP_NAME}.*${APP_NAME}:${IMAGE_TAG}/g' guestbook-ui-deployment.yaml
+                    cat guestbook-ui-deployment.yaml
+                """
+            }
+        }
         stage('Push the changed deployment to GIT') {
             steps {
                 sh """
