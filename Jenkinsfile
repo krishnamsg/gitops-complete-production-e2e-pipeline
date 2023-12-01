@@ -26,9 +26,9 @@ pipeline {
         stage('Push the changed deployment to GIT') {
             steps {
                 sh """
-                    git config --globel user.name "krishnamsg"
-                    git congig --globel user.email "krishnams.aws1@gmail.com"
-                    git add deployment.yaml
+                    git config --global user.name "krishnamsg"
+                    git congig --global user.email "krishnams.aws1@gmail.com"
+                    git add .
                     git commit -m "Updated deployment Manifest"
                 """
                 withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
