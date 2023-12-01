@@ -22,7 +22,7 @@ pipeline {
               //      cat guestbook-ui-deployment.yaml
                 //"""
             //}
-        }
+        //}
         stage('Push the changed deployment to GIT') {
             steps {
                 sh """
