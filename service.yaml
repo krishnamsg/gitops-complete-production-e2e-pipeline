@@ -3,8 +3,10 @@ kind: Service
 metadata:
   name: complete-production-e2e-app
 spec:
-  ports:
-  - port: 80
-    targetPort: 8080
   selector:
     app: complete-prodcution-e2e-pipeline
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: NodePort  # Adjust the service type as needed
