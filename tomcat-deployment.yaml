@@ -1,0 +1,21 @@
+# tomcat-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: complete-production-e2e-deploymen
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: complete-production-e2e-pipeline
+  template:
+    metadata:
+      labels:
+        app: complete-production-e2e-app
+    spec:
+      containers:
+      - name: complete-prodcution-e2e-pipeline
+        image: krishnamsg/complete-prodcution-e2e-pipeline:1.0.0-30
+        ports:
+        - containerPort: 8080
+

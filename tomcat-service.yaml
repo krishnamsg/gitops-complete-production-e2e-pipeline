@@ -1,0 +1,14 @@
+# tomcat-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: complete-production-e2e-deployment
+spec:
+  selector:
+    app: tomcatcomplete-prodcution-e2e-pipeline
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: NodePort
+
