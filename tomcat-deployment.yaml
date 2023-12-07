@@ -1,20 +1,20 @@
-# tomcat-deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: makaan-kubernetes-deployment
+  name: complete-production-e2e-deploymen
 spec:
+  replicas: 3
   replicas: 2
   selector:
     matchLabels:
-      app: makaan-kubernetes-pipeline
+      app: complete-production-e2e-pipeline
   template:
     metadata:
       labels:
-        app: makaan-application-app
+        app: complete-production-e2e-app
     spec:
       containers:
-      - name: makaan-kubernetes-pipeline
-        image: krishnamsg/makaan:1.0.0-14
+      - name: complete-prodcution-e2e-pipeline
+        image: krishnamsg/complete-prodcution-e2e-pipeline:1.0.0-30
         ports:
         - containerPort: 8080
