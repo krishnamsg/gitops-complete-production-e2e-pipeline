@@ -5,7 +5,7 @@ metadata:
   name: complete-production-e2e-deployment
 spec:
   selector:
-    app: tomcatcomplete-prodcution-e2e-pipeline
+    app: tomcatcomplete-prodcution-e2e-app
   ports:
     - protocol: TCP
       port: 80
