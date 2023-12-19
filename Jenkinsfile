@@ -17,9 +17,9 @@ pipeline {
         stage('Update the Deployemnt Tags') {
             steps {
                 sh """
-                    cat guestbook-ui-deployment.yaml
+                    cat tomcat-deployment.yaml
                     sed -i 's/${APP_NAME}.*${APP_NAME}:${IMAGE_TAG}/g' guestbook-ui-deployment.yaml
-                    cat guestbook-ui-deployment.yaml
+                    cat tomcat-deployment.yaml
                 """
             }
         }
