@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: complete-production-e2e-container
-          image: krishnamsg/complete-prodcution-e2e-pipeline:1.0.0-40
+          image: krishnamsg/complete-prodcution-e2e-pipeline:1.0.0-39
           ports:
             - containerPort: 80  # Adjust the container port as needed
 
