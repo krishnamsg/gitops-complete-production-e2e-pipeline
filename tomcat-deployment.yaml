@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: complete-production-e2e-deployment
 spec:
-  replicas: 2
+  replicas: 2  # Adjust the number of replicas as needed
   selector:
     matchLabels:
       app: complete-production-e2e-app
@@ -13,7 +13,8 @@ spec:
         app: complete-production-e2e-app
     spec:
       containers:
-      - name: complete-prodcution-e2e-app
-        image: krishnamsg/complete-prodcution-e2e-pipeline:1.0.0-30
-        ports:
-        - containerPort: 8080
+        - name: complete-production-e2e-container
+          image: krishnamsg/complete-prodcution-e2e-pipeline:1.0.0-41
+          ports:
+            - containerPort: 80  # Adjust the container port as needed
+

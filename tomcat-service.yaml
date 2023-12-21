@@ -1,14 +1,14 @@
-# tomcat-service.yaml
 apiVersion: v1
 kind: Service
 metadata:
-  name: complete-production-e2e-app
+  name: complete-production-e2e-service
 spec:
   selector:
-    app: tomcatcomplete-prodcution-e2e-app
+    app: complete-production-e2e-app
+  type: NodePort
   ports:
     - protocol: TCP
-      port: 8080
-      targetPort: 8080
-  type: NodePort
+      port: 80  # Expose the service on port 80
+      targetPort: 8080  # Point to the container port
+      nodePort: 31111  # Choose a NodePort value (30000-32767) or let Kubernetes assign one
 

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: complete-production-e2e-pod
+spec:
+  containers:
+    - name: complete-production-e2e-container
+      image: krishnamsg/complete-prodcution-e2e-pipeline:1.0.0-41
+      ports:
+        - containerPort: 80  # Adjust the container port as needed
+
